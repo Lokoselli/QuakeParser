@@ -46,7 +46,7 @@ public class Game {
         String gunId = commandTextArr[2].split(":")[0];
 
         if(killerPlayer != null){
-            killerPlayer.addKill();
+            killerPlayer.addKill(idKilledPlayer);
         }
 
         killedPlayer.computeDeath(idKillerPlayer);

@@ -12,8 +12,10 @@ public class Player {
         this.game = game;
     }
 
-    public void addKill(){
-        kills++;
+    public void addKill(String killed){
+        if(!killed.equals(this.id)){
+            kills++;
+        }
     }
 
     public void computeDeath(String killer){

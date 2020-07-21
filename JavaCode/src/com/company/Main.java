@@ -3,24 +3,57 @@ package com.company;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.Hashtable;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        runParser("game.log.txt");
+        Hashtable<Integer, Game> games = runParser("game.log.txt");
+        Scanner scan = new Scanner(System.in);
+        String continueCheck = "";
+        while (!continueCheck.equals("n")){
+            menu(games);
+            System.out.println("Want to check for another? Y/N");
+            continueCheck = scan.next().toLowerCase();
+        }
+
+
 
     }
 
-    public static void runParser(String fileName) throws IOException {
+    public static int menu(Hashtable<Integer,Game> games){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("See results for What Games:");
+        System.out.println("Games Available: 1 - " + (games.size() -1));
+        int i;
+        try{
+            i = scan.nextInt();
+        }catch (InputMismatchException exception){
+            System.out.println("Please enter a number from 1 through " + (games.size() - 1));
+            return menu(games);
+        }
+        if(i >= games.size() || i <= 0){
+            System.out.println("Please enter a number from 1 through " + (games.size() - 1));
+            return menu(games);
+        }
+
+        games.get(i).printGameResult();
+
+        return i;
+    }
+
+    public static Hashtable<Integer, Game> runParser(String fileName) throws IOException {
         String path = "./" + fileName;
         File fileIn = new File(path);
         FileReader in = new FileReader(fileIn);
         BufferedReader br = new BufferedReader(in);
 
+
         String line;
         int gameN = 0;
-        Game game = new Game();
+        Game game = new Game("0");
         Hashtable <Integer, Game> gamesPlayed = new Hashtable<>();
         while ((line = br.readLine()) != null){
 
@@ -36,8 +69,12 @@ public class Main {
                     break;
                 case "ClientConnect":
                     game.clientConnect(commandText);
+                    break;
                 case "ClientUserinfoChanged":
                     game.clientUserInfoChanged(commandText);
+                    break;
+                case "Kill":
+                    game.kill(commandText);
                 default:
                     break;
 
@@ -45,7 +82,7 @@ public class Main {
         }
 
 
-
+        return gamesPlayed;
 
     }
 
