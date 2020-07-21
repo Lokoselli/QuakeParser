@@ -2,9 +2,27 @@ package com.company;
 
 public class Player {
 
-    private int kills;
+    private int kills = 0;
     private String name;
-    private int id;
+    private String id;
+    Game game;
+
+    Player(String id, Game game){
+        this.id = id;
+        this.game = game;
+    }
+
+    public void addKill(){
+        kills++;
+    }
+
+    public void computeDeath(String killer){
+
+        if (killer.equals("1022")){
+            kills--;
+        }
+
+    }
 
     public int getKills() {
         return kills;
@@ -14,11 +32,12 @@ public class Player {
         return name;
     }
 
-    public int getId() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 }
