@@ -21,3 +21,5 @@
  If you have any doubts or questions regarding the program feel free to contact me:
  Email: gabriel.locoselli@gmail.com
  Linkedin: https://www.linkedin.com/in/gabriel-locoselli-oliveira/
+ Git Repository: https://github.com/Lokoselli/QuakeParser
+ Class Structure: https://app.diagrams.net/#HLokoselli%2FQuakeParser%2Fmaster%2FQuakeParser
