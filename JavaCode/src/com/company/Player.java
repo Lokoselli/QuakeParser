@@ -5,7 +5,7 @@ public class Player {
     private int kills = 0;
     private String name;
     private String id;
-    Game game;
+    private Game game;
 
     Player(String id, Game game){
         this.id = id;

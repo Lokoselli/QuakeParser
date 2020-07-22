@@ -91,7 +91,7 @@ public class Main {
         if(line == null){
             return new String[0];
         }
-        //Gets a Line and separates into a list of [0] Time, [1] Command and [2] Command Text
+
         String [] finalArray = new String[2];
 
         String[] lineArray = line.split("\\d+:\\d+ ", 3);
