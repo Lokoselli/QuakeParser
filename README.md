@@ -1,7 +1,7 @@
 # QuakeParser
  Parses through a quake log and lets you choose a game to look at the aftermath.
  
- #How to Run
+ How to Run
  ----------
  
  1 - Make Sure that you have Java 11+ installed in your computer.
@@ -10,7 +10,12 @@
  4 - Execute the command: java -jar QuakeParser.jar
  5 - Done. The program will run on the terminal and you may access all the logs. If you want to exit, after a search type the letter N. If you want to do another search type any other character or hit enter.
  
- #Doubts
+ General Info
+ -------------
+ The class files are located inside the path SourceCode\\src\\com\\company.
+ 
+ 
+ Doubts
  ------------
  
  If you have any doubts or questions regarding the program feel free to contact me:
