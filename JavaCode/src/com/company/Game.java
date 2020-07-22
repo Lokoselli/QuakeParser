@@ -104,7 +104,7 @@ public class Game {
 
 
         Iterator it = playerHashMap.entrySet().iterator();
-        String playerKills = "Kills\n";
+        String playerKills = "KILLS\n";
 
         while (it.hasNext()){
             Map.Entry pair = (Map.Entry)it.next();
@@ -116,7 +116,7 @@ public class Game {
         }
 
         Iterator itMOD = meansOfDeathHashTable.entrySet().iterator();
-        String MODString = "Kills by MOD\n";
+        String MODString = "KILLS BY MOD\n";
         while (itMOD.hasNext()){
             Map.Entry pair = (Map.Entry)itMOD.next();
             MODString = MODString  + pair.getKey() + " : " + pair.getValue() + "\n";
@@ -124,7 +124,7 @@ public class Game {
 
 
 
-        String header = "GAME NUMBER " + this.gameId + "\n";
+        String header = "\nGAME NUMBER " + this.gameId + "\n";
         String breaker = "-----------------------------\n";
         String totalKills = "TOTAL KILLS: " + this.totalKills + "\n";
         String players = "PLAYERS: " + this.playerList + "\n";
