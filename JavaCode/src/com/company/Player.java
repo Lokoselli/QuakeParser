@@ -16,6 +16,7 @@ public class Player {
         if(!killed.equals(this.id)){
             kills++;
         }
+
     }
 
     public void computeDeath(String killer){
@@ -23,7 +24,6 @@ public class Player {
         if (killer.equals("1022")){
             kills--;
         }
-
     }
 
     public int getKills() {

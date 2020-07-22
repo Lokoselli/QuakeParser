@@ -1,7 +1,6 @@
 package com.company;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.Hashtable;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -63,9 +62,9 @@ public class Main {
 
             switch (command){
                 case "InitGame":
-                    gamesPlayed.put(gameN, game);
                     gameN++;
                     game = new Game("" + gameN);
+                    gamesPlayed.put(gameN, game);
                     break;
                 case "ClientConnect":
                     game.clientConnect(commandText);
@@ -75,6 +74,7 @@ public class Main {
                     break;
                 case "Kill":
                     game.kill(commandText);
+                    break;
                 default:
                     break;
 
